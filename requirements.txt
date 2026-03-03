@@ -6,4 +6,12 @@ pydantic
 pytest
 tiktoken
 autogen-ext[docker]
+autogen-agentchat
+autogen-ext[openai]
+dotenv
+autogen-core
+pydantic
+pytest
+tiktoken
+autogen-ext[docker]
 streamlit
