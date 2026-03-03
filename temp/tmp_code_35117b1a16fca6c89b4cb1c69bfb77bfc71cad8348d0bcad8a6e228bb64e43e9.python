@@ -1,0 +1,34 @@
+def is_palindrome(item):
+    """
+    Determines if a string or number is a palindrome.
+
+    Args:
+        item: The string or number to check.
+
+    Returns:
+        True if the item is a palindrome, False otherwise.
+    """
+    s = str(item)
+    return s == s[::-1]
+
+# Test cases
+test_cases = [
+    ("madam", True),
+    ("racecar", True),
+    ("hello", False),
+    (121, True),
+    (12321, True),
+    (12345, False),
+    ("A", True),
+    ("", True), # An empty string is considered a palindrome
+    ("No lemon, no melon", False) # Case sensitive and space sensitive
+]
+
+results = []
+for item, expected in test_cases:
+    actual = is_palindrome(item)
+    results.append(f"Input: '{item}', Expected: {expected}, Got: {actual}, {'PASS' if actual == expected else 'FAIL'}")
+
+for r in results:
+    print(r)
+

@@ -1,0 +1,13 @@
+prefix=D:/Microsoft Autogen Tutorials - Krish Naik/Autogen/Autogen Projects/DSA Solver/AlgoGenie/venv/Library
+exec_prefix=D:/Microsoft Autogen Tutorials - Krish Naik/Autogen/Autogen Projects/DSA Solver/AlgoGenie/venv/Library
+libdir=D:/Microsoft Autogen Tutorials - Krish Naik/Autogen/Autogen Projects/DSA Solver/AlgoGenie/venv/Library/lib
+sharedlibdir=D:/Microsoft Autogen Tutorials - Krish Naik/Autogen/Autogen Projects/DSA Solver/AlgoGenie/venv/Library/lib
+includedir=D:/Microsoft Autogen Tutorials - Krish Naik/Autogen/Autogen Projects/DSA Solver/AlgoGenie/venv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.3.1
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
