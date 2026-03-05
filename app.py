@@ -13,6 +13,13 @@ from autogen_agentchat.base import TaskResult
 from src.teams.dsa_team import get_dsa_team_docker
 from src.config.docker_utils import start_docker_container, stop_docker_container
 
+
+def get_model_client(api_key):
+    model_client = OpenAIChatCompletionClient(model=MODEL, api_key=api_key)
+    return model_client
+
+model_client = None
+
 st.title("AlgoGenie - Our DSA Problem Solver")
 st.write("Welcome to AlgoGenie, your personal DSA problem solver! Here you can ask solutions to various data structures and algorithms problems.")
 
@@ -23,14 +30,11 @@ with st.sidebar:
 
     if api_key:
         os.environ["GOOGLE_API_KEY"] = api_key
+        model_client = get_model_client(api_key=api_key) 
     
     if not api_key:
         st.warning("⚠️ Please enter your Google Gemini API Key in the sidebar!")
         st.stop()
-
-def get_model_client():
-    model_client = OpenAIChatCompletionClient(model=MODEL, api_key=api_key)
-    return model_client
 
 async def run(dsa_team, docker, task):
     try:
@@ -51,10 +55,10 @@ async def run(dsa_team, docker, task):
     finally:
         await stop_docker_container(docker)
 
-if st.button("Run"):
+if st.button("Run") and model_client is not None:
     st.write("Running the Task..")
    
-    dsa_team, docker = get_dsa_team_docker()
+    dsa_team, docker = get_dsa_team_docker(model_client)
 
     async def collect_messages():
         async for msg in run(dsa_team, docker, task):

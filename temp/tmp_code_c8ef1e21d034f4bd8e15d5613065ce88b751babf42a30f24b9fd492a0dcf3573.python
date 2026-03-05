@@ -1,0 +1,11 @@
+def add_numbers(a, b):
+    """
+    This function takes two numbers as input and returns their sum.
+    """
+    return a + b
+
+# Test cases
+print(f"Adding 5 and 3: {add_numbers(5, 3)}")
+print(f"Adding -10 and 7: {add_numbers(-10, 7)}")
+print(f"Adding 0 and 0: {add_numbers(0, 0)}")
+print(f"Adding 2.5 and 3.5: {add_numbers(2.5, 3.5)}")
