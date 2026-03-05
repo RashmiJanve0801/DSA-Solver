@@ -6,8 +6,8 @@ from autogen_agentchat.conditions import TextMentionTermination
 
 from src.config.constant import TEXT_MENTION, MAX_TURNS
 
-def get_dsa_team_docker():
-    problem_solver_agent = get_problem_solver_agent()
+def get_dsa_team_docker(model_client):
+    problem_solver_agent = get_problem_solver_agent(model_client)
     code_executor_agent, docker  = get_code_executor_agent()
 
     termination_condition=TextMentionTermination(TEXT_MENTION)

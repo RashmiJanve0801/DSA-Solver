@@ -1,9 +1,6 @@
 from autogen_agentchat.agents import AssistantAgent
-from src.config.settings import get_model_client
 
-model_client = get_model_client()
-
-def get_problem_solver_agent():
+def get_problem_solver_agent(model_client):
     """
     Function to get the problem solver agent.
     This agent is responsible for solving DSA problems.

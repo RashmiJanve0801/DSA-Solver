@@ -1,5 +1,11 @@
 import asyncio
 import streamlit as st
+import os
+
+from dotenv import load_dotenv
+
+from autogen_ext.models.openai import OpenAIChatCompletionClient
+from src.config.constant import MODEL
 
 from autogen_agentchat.messages import TextMessage
 from autogen_agentchat.base import TaskResult
@@ -11,6 +17,20 @@ st.title("AlgoGenie - Our DSA Problem Solver")
 st.write("Welcome to AlgoGenie, your personal DSA problem solver! Here you can ask solutions to various data structures and algorithms problems.")
 
 task = st.text_input("Enter your DSA problem or question:", value="Write a function to add two numbers")
+with st.sidebar:
+    st.header("API Settings")
+    api_key = st.text_input("Google API Key", type="password")
+
+    if api_key:
+        os.environ["GOOGLE_API_KEY"] = api_key
+    
+    if not api_key:
+        st.warning("⚠️ Please enter your Google Gemini API Key in the sidebar!")
+        st.stop()
+
+def get_model_client():
+    model_client = OpenAIChatCompletionClient(model=MODEL, api_key=api_key)
+    return model_client
 
 async def run(dsa_team, docker, task):
     try:
