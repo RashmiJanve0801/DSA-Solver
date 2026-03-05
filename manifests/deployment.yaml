@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: llmops-app
-          image: rashmijanve/dsa-solver:v6
+          image: rashmijanve/dsa-solver:v7
           ports:
             - containerPort: 8501
