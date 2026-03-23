@@ -36,5 +36,5 @@ the executor doesn't write code.
 | LLM | Google Gemini 2.5 Flash |
 | Code Execution | Docker (sandboxed containers) |
 | Frontend | Streamlit, CLI (argparse) |
-| Infra | Docker, python-dotenv |
+| Infra | Docker |
 
