@@ -1,4 +1,4 @@
-# 🤖 DSA Solver — Multi-Agent Code Generation & Execution
+# DSA Solver — Multi-Agent Code Generation & Execution
 
 The question that started this: can two AI agents actually solve a 
 coding problem end-to-end — not just write code, but run it, 
@@ -27,8 +27,6 @@ AutoGen's `RoundRobinGroupChat` coordinates the turn-taking between agents.
 Clean separation of concerns — the solver doesn't execute, 
 the executor doesn't write code.
 
-
-## Tech Stack
 
 ## Tech Stack
 
