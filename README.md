@@ -11,12 +11,12 @@ The rest get there after a retry loop. Not bad.
 
 Two agents. One job each.
 
-**Agent 1 — Problem Solver**
+**Agent 1 — Problem Solver:**
 Takes the problem description, reasons through the approach, 
 writes a Python solution and test cases. Uses Gemini 2.5 Flash 
 for the reasoning and code generation.
 
-**Agent 2 — Code Executor**
+**Agent 2 — Code Executor:**
 Receives the solution, runs it inside an isolated Docker container 
 (nothing executes on your host machine), checks test results.
 
